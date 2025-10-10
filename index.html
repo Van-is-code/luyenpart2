@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện Nghe Theo Cấp Độ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="level-selection-screen" class="container">
+        <h1>Chọn Cấp Độ</h1>
+        <div class="level-grid">
+            <button class="level-btn" data-level="1">Level 1</button>
+            <button class="level-btn" data-level="2">Level 2</button>
+            <button class="level-btn" data-level="3">Level 3</button>
+            <button class="level-btn" data-level="4">Level 4</button>
+            <button id="summary-mode-btn" class="level-btn" style="display:block;margin:0.5rem auto;">Tổng kết (125 câu)</button>
+        </div>
+    </div>
+
+    <div id="practice-screen" class="container hidden">
+        <h1 id="practice-header">Luyện Nghe Nói & Dịch</h1>
+        <div class="card">
+            <div id="answer-section" class="hidden">
+                <p id="sentence-text"></p>
+                <h3 id="ipa-text"></h3>
+                <p id="vietnamese-translation" class="translation-text"></p>
+                <button id="ai-helper-btn" class="hidden">🤖 Phân tích ngữ pháp (AI)</button>
+                <div id="ai-explanation" class="hidden"></div>
+            </div>
+            
+            <div class="sentence-container">
+                <p>Nhấn nút để nghe câu:</p>
+                <button id="play-audio-btn" class="icon-btn"><i class="fas fa-volume-up"></i> Nghe lại</button>
+            </div>
+            <hr>
+            <div class="practice-section">
+                 <h2><i class="fas fa-microphone"></i> Luyện phát âm</h2>
+                 <div class="pronunciation-result"><p><strong>Bạn đọc:</strong> <span id="recognition-result"></span></p><p><strong>Điểm:</strong> <span id="pronunciation-score"></span></p></div>
+                 <button id="record-btn" class="main-btn"><i class="fas fa-microphone"></i> Ghi âm</button>
+            </div>
+            <hr>
+            <div class="practice-section">
+                <h2><i class="fas fa-language"></i> Luyện dịch</h2>
+                <textarea id="translation-input" rows="3" placeholder="Viết bản dịch của bạn vào đây..."></textarea>
+                <div class="translation-result"><p class="hidden"><strong>Nghĩa đúng:</strong> <span id="correct-translation"></span></p><p><strong>Điểm:</strong> <span id="translation-score"></span></p></div>
+                <button id="check-translation-btn" class="main-btn">Kiểm tra dịch</button>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+             <button id="skip-btn" class="skip-btn">Khó quá, bỏ qua</button>
+        </div>
+        <div class="progress-container">
+            <p id="progress-text"></p>
+        </div>
+        <div class="navigation">
+            <button id="prev-btn" class="nav-btn">Câu trước</button>
+            <button id="next-btn" class="nav-btn">Câu tiếp theo</button>
+            <button id="back-to-levels-btn" class="nav-btn">Quay lại</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
