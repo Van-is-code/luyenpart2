@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- DOM Elements ---
     const levelSelectionScreen = document.getElementById('level-selection-screen');
     const practiceScreen = document.getElementById('practice-screen');
-    // Only select buttons that have a data-level attribute (exclude the summary button)
-    const levelButtons = document.querySelectorAll('.level-btn[data-level]');
+    
+    // Nút duy nhất để bắt đầu
+    const startBtvn10Btn = document.getElementById('start-btvn10-btn'); 
+    
     const backToLevelsBtn = document.getElementById('back-to-levels-btn');
     const practiceHeader = document.getElementById('practice-header');
     const progressText = document.getElementById('progress-text');
@@ -17,6 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const pronunciationScoreEl = document.getElementById('pronunciation-score');
     const translationInputEl = document.getElementById('translation-input');
     const checkTranslationBtn = document.getElementById('check-translation-btn');
+    // Translation mode UI
+    const translationModeRecordBtn = document.getElementById('translation-mode-record');
+    const translationModeTypeBtn = document.getElementById('translation-mode-type');
+    const translationRecordSection = document.getElementById('translation-record-section');
+    const translationTypeSection = document.getElementById('translation-type-section');
+    const recordTranslationBtn = document.getElementById('record-translation-btn');
+    const translationRecordResultEl = document.getElementById('translation-record-result');
     const correctTranslationEl = document.getElementById('correct-translation');
     const vietnameseTranslationEl = document.getElementById('vietnamese-translation');
     const translationScoreEl = document.getElementById('translation-score');
@@ -27,12 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const aiExplanationEl = document.getElementById('ai-explanation');
 
     // --- State Management ---
-    let allData = {};
-    let currentSentences = [];
+    let allData = {}; // Sẽ chỉ lưu { btvn10: [...] }
+    let currentSentences = []; // Danh sách 25 câu
     let currentSentenceIndex = 0;
     const COMPLETION_THRESHOLD = 0.9; // 90%
     let isPronunciationCorrect = false;
     let isTranslationCorrect = false;
+    let translationMode = 'type'; // 'type' or 'record'
+    let isRecordingTranslation = false;
+    let preferredVoice = null; // Để lưu giọng đọc tốt nhất
 
     // --- AI Integration ---
     const synth = window.speechSynthesis;
@@ -50,23 +62,50 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch('data.json');
             allData = await response.json();
-            // enable level buttons and summary button after data loaded
             enableSelectionButtons();
         } catch (error) {
             alert("Lỗi tải dữ liệu. Hãy chắc chắn file data.json tồn tại và đúng cấu trúc.");
         }
     }
 
+    // *** HÀM ĐÃ CẬP NHẬT: Ưu tiên giọng NỮ ***
+    function loadSpeechVoices() {
+        if (!synth) return;
+        
+        const setVoice = () => {
+            const voices = synth.getVoices();
+            if (voices.length === 0) return;
+
+            // 1. Ưu tiên giọng "Natural" NỮ (VD: Microsoft Zira, Aria)
+            // preferredVoice = voices.find(v => v.lang === 'en-US' && v.name.includes('Natural') && v.name.includes('Female')) ||
+                             // 2. Ưu tiên giọng "Google" NỮ
+                             voices.find(v => v.lang === 'en-US' && v.name.includes('Google') && v.name.includes('Female')) ||
+                             // 3. Ưu tiên bất kỳ giọng "Female" (Nữ) nào
+                            //  voices.find(v => v.lang === 'en-US' && v.name.includes('Female')) ||
+                            //  // 4. Dự phòng: Lấy giọng Natural bất kỳ (Nam/Nữ)
+                            //  voices.find(v => v.lang === 'en-US' && v.name.includes('Natural')) ||
+                            //  // 5. Dự phòng: Lấy giọng Google bất kỳ
+                            //  voices.find(v => v.lang === 'en-US' && v.name.includes('Google')) ||
+                            //  // 6. Dự phòng: Lấy giọng en-US đầu tiên
+                            //  voices.find(v => v.lang === 'en-US');
+
+            console.log("Giọng đọc được chọn:", preferredVoice ? preferredVoice.name : "Không tìm thấy giọng en-US");
+        };
+
+        if (synth.getVoices().length !== 0) {
+            setVoice();
+        } else {
+            synth.onvoiceschanged = setVoice;
+        }
+    }
+    // *****************************************
+
     function enableSelectionButtons() {
-        levelButtons.forEach(b => b.removeAttribute('disabled'));
-        const summary = document.getElementById('summary-mode-btn');
-        if (summary) summary.removeAttribute('disabled');
+        if (startBtvn10Btn) startBtvn10Btn.removeAttribute('disabled');
     }
 
     function disableSelectionButtons() {
-        levelButtons.forEach(b => b.setAttribute('disabled', 'true'));
-        const summary = document.getElementById('summary-mode-btn');
-        if (summary) summary.setAttribute('disabled', 'true');
+        if (startBtvn10Btn) startBtvn10Btn.setAttribute('disabled', 'true');
     }
 
     // Fisher-Yates shuffle
@@ -79,43 +118,19 @@ document.addEventListener('DOMContentLoaded', () => {
         return a;
     }
 
-    function startLevel(level) {
-        const levelKey = `level${level}`;
-        if (!allData[levelKey] || allData[levelKey].length === 0) {
-            alert(`Không có dữ liệu cho Level ${level}!`);
+    // Hàm bắt đầu luyện tập duy nhất
+    function startPractice() {
+        if (!allData.btvn10 || allData.btvn10.length === 0) {
+            alert('Lỗi: Không tìm thấy dữ liệu btvn10 trong data.json.');
             return;
         }
-        // Shuffle sentences for this level so order is random each time
-        currentSentences = shuffleArray(allData[levelKey]);
+        currentSentences = shuffleArray(allData.btvn10);
         currentSentenceIndex = 0;
         
         levelSelectionScreen.classList.add('hidden');
         practiceScreen.classList.remove('hidden');
-        practiceHeader.textContent = `Level ${level}`;
+        practiceHeader.textContent = `Luyện tập BTVN 10`;
         
-        displaySentence();
-    }
-
-    // --- Summary mode: combine all sentences and shuffle (intended for all 125 sentences)
-    function startSummaryMode() {
-        // Combine all level arrays into one
-        const combined = [];
-        Object.keys(allData).forEach(k => {
-            if (Array.isArray(allData[k])) combined.push(...allData[k]);
-        });
-        if (combined.length === 0) {
-            alert('Chưa có dữ liệu để tổng kết. Vui lòng tải dữ liệu trước.');
-            return;
-        }
-
-        currentSentences = shuffleArray(combined);
-        currentSentenceIndex = 0;
-
-        levelSelectionScreen.classList.add('hidden');
-        practiceScreen.classList.remove('hidden');
-    // Show fixed summary count (125) per user's request
-    practiceHeader.textContent = `Tổng kết: 125 câu`;
-
         displaySentence();
     }
 
@@ -132,6 +147,23 @@ document.addEventListener('DOMContentLoaded', () => {
         playAudio(true);
     }
     
+    function setTranslationMode(mode) {
+        translationMode = mode;
+        if (mode === 'type') {
+            translationTypeSection.style.display = '';
+            translationRecordSection.style.display = 'none';
+            translationModeTypeBtn.classList.add('active');
+            translationModeRecordBtn.classList.remove('active');
+        } else {
+            translationTypeSection.style.display = 'none';
+            translationRecordSection.style.display = '';
+            translationModeTypeBtn.classList.remove('active');
+            translationModeRecordBtn.classList.add('active');
+        }
+        translationRecordResultEl.textContent = '';
+        translationInputEl.value = '';
+    }
+
     function resetForNewSentence() {
         answerSectionEl.classList.add('hidden');
         aiExplanationEl.classList.add('hidden');
@@ -146,12 +178,14 @@ document.addEventListener('DOMContentLoaded', () => {
         translationScoreEl.textContent = '';
         nextBtn.disabled = true;
         skipBtn.disabled = false;
+        setTranslationMode('type');
+
+        if (synth.speaking) synth.cancel();
     }
 
     function showAnswers() {
         answerSectionEl.classList.remove('hidden');
         correctTranslationEl.parentElement.parentElement.classList.remove('hidden');
-        // populate the Vietnamese translation under the sentence (if available)
         try {
             const cur = currentSentences[currentSentenceIndex];
             if (vietnameseTranslationEl && cur && cur.translation) {
@@ -175,7 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
         aiExplanationEl.textContent = '🤖 AI đang phân tích, vui lòng chờ...';
         aiExplanationEl.classList.remove('hidden');
         
-        // TODO: Thay thế URL này bằng endpoint backend của bạn
         const YOUR_BACKEND_API_URL = 'http://127.0.0.1:5000/analyze-grammar';
         
         try {
@@ -191,13 +224,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Event Listeners ---
-    levelButtons.forEach(button => {
-        button.addEventListener('click', () => startLevel(button.dataset.level));
-    });
-
-    // Summary mode button
-    const summaryModeBtn = document.getElementById('summary-mode-btn');
-    if (summaryModeBtn) summaryModeBtn.addEventListener('click', startSummaryMode);
+    if (startBtvn10Btn) {
+        startBtvn10Btn.addEventListener('click', startPractice);
+    }
 
     backToLevelsBtn.addEventListener('click', () => {
         practiceScreen.classList.add('hidden');
@@ -210,17 +239,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     checkTranslationBtn.addEventListener('click', () => {
         try {
-            // Ensure we have a sentence loaded
             const current = currentSentences[currentSentenceIndex];
-            if (!current) {
-                translationScoreEl.textContent = 'Hãy chọn một level và câu trước khi kiểm tra.';
-                translationScoreEl.style.color = 'red';
-                return;
-            }
+            if (!current) return;
 
-            const userTranslation = (translationInputEl.value || '').trim();
+            let userTranslation = '';
+            if (translationMode === 'type') {
+                userTranslation = (translationInputEl.value || '').trim();
+            } else {
+                userTranslation = (translationRecordResultEl.textContent || '').trim();
+            }
             if (!userTranslation) {
-                translationScoreEl.textContent = 'Vui lòng nhập bản dịch của bạn.';
+                translationScoreEl.textContent = translationMode === 'type' ? 'Vui lòng nhập bản dịch.' : 'Vui lòng ghi âm bản dịch.';
                 translationScoreEl.style.color = 'red';
                 return;
             }
@@ -231,14 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
             translationScoreEl.textContent = `Điểm: ${(score * 100).toFixed(0)}%`;
             translationScoreEl.style.color = score >= COMPLETION_THRESHOLD ? 'green' : (score > 0.6 ? 'orange' : 'red');
 
-            // Reveal the correct translation area so the user can compare
-            try {
-                // correctTranslationEl is inside a <p>, which is inside the .translation-result div
-                if (correctTranslationEl && correctTranslationEl.parentElement && correctTranslationEl.parentElement.parentElement) {
-                    correctTranslationEl.parentElement.parentElement.classList.remove('hidden');
-                }
-            } catch (e) { /* ignore DOM errors */ }
-
+            correctTranslationEl.parentElement.parentElement.classList.remove('hidden');
             correctTranslationEl.textContent = correctTrans;
 
             if (score >= COMPLETION_THRESHOLD) {
@@ -249,17 +271,55 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (err) {
             console.error('Error during translation check:', err);
-            translationScoreEl.textContent = 'Đã có lỗi khi kiểm tra. Vui lòng thử lại.';
+            translationScoreEl.textContent = 'Đã có lỗi khi kiểm tra.';
             translationScoreEl.style.color = 'red';
         }
     });
+
+    if (translationModeRecordBtn && translationModeTypeBtn) {
+        translationModeRecordBtn.addEventListener('click', () => setTranslationMode('record'));
+        translationModeTypeBtn.addEventListener('click', () => setTranslationMode('type'));
+    }
+
+    if (recordTranslationBtn && SpeechRecognition) {
+        let translationRecognition = new SpeechRecognition();
+        translationRecognition.continuous = false;
+        translationRecognition.lang = 'vi-VN';
+        translationRecognition.interimResults = false;
+
+        recordTranslationBtn.addEventListener('click', () => {
+            if (isRecordingTranslation) {
+                try { translationRecognition.stop(); } catch (e) {}
+                return;
+            }
+            translationRecordResultEl.textContent = '';
+            isRecordingTranslation = true;
+            recordTranslationBtn.classList.add('recording');
+            recordTranslationBtn.innerHTML = '<i class="fas fa-stop"></i> Dừng ghi âm';
+            translationRecognition.start();
+        });
+        translationRecognition.onresult = (event) => {
+            translationRecordResultEl.textContent = event.results[0][0].transcript;
+        };
+        translationRecognition.onend = () => {
+            isRecordingTranslation = false;
+            recordTranslationBtn.classList.remove('recording');
+            recordTranslationBtn.innerHTML = '<i class="fas fa-microphone"></i> Ghi âm dịch';
+        };
+        translationRecognition.onerror = (event) => {
+            translationRecordResultEl.textContent = 'Lỗi nhận dạng: ' + event.error;
+            isRecordingTranslation = false;
+            recordTranslationBtn.classList.remove('recording');
+            recordTranslationBtn.innerHTML = '<i class="fas fa-microphone"></i> Ghi âm dịch';
+        };
+    }
     
     recordBtn.addEventListener('click', () => { if(recognition) recognition.start(); });
 
     nextBtn.addEventListener('click', () => {
         currentSentenceIndex++;
         if (currentSentenceIndex >= currentSentences.length) {
-            alert('Chúc mừng! Bạn đã hoàn thành level này!');
+            alert('Chúc mừng! Bạn đã hoàn thành tất cả 25 câu!');
             backToLevelsBtn.click();
             return;
         }
@@ -280,7 +340,6 @@ document.addEventListener('DOMContentLoaded', () => {
             recordBtn.innerHTML = '<i class="fas fa-stop"></i> Dừng';
             recognitionResultEl.textContent = 'Đang nghe...';
         };
-
         recognition.onresult = (event) => {
             const spokenText = event.results[0][0].transcript;
             recognitionResultEl.textContent = spokenText;
@@ -295,29 +354,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 checkCompletion();
             } else { isPronunciationCorrect = false; }
         };
-        
         recognition.onend = () => {
             recordBtn.classList.remove('recording');
             recordBtn.innerHTML = '<i class="fas fa-microphone"></i> Ghi âm';
         };
-
         recognition.onerror = (event) => {
             recognitionResultEl.textContent = 'Lỗi nhận dạng: ' + event.error;
         };
     }
 
     // --- Utility Functions ---
+    
+    // Hàm playAudio (sử dụng TTS)
     function playAudio(autoplay = false) {
         if (synth.speaking) synth.cancel();
         
         const utterance = new SpeechSynthesisUtterance(currentSentences[currentSentenceIndex].sentence);
         utterance.lang = 'en-US';
         
-        if (synth.getVoices().length === 0) {
-             synth.onvoiceschanged = () => synth.speak(utterance);
-        } else {
-            synth.speak(utterance);
+        // Gán giọng đọc nữ tốt nhất đã tìm thấy
+        if (preferredVoice) {
+            utterance.voice = preferredVoice;
         }
+        
+        synth.speak(utterance);
     }
     
     function calculateSimilarity(s1, s2) {
@@ -348,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Initialization ---
-    // disable selection until data is loaded
     disableSelectionButtons();
-    loadData();
+    loadSpeechVoices(); // Tải giọng đọc
+    loadData(); // Tải dữ liệu
 });
