@@ -1,22 +1,22 @@
 {
-  "btvn10": [
+  "level1": [
     {
       "id": 1,
-      "sentence": "What kind of tablet computer do you have?",
-      "translation": "Bạn có loại máy tính bảng nào?",
-      "ipa": "/wʌt kaɪnd əv ˈtæblət kəmˈpjutər du ju hæv?/"
+      "sentence": "Where's the nearest print shop?",
+      "translation": "Cửa hàng in gần nhất ở đâu?",
+      "ipa": "/wɛrz ðə ˈnɪrəst prɪnt ʃɑp?/"
     },
     {
       "id": 2,
-      "sentence": "What happened at the workshop yesterday?",
-      "translation": "Chuyện gì đã xảy ra tại hội thảo hôm qua?",
-      "ipa": "/wʌt ˈhæpənd æt ðə ˈwɜrkˌʃɑp ˈjɛstərˌdeɪ?/"
+      "sentence": "Which desk is mine?",
+      "translation": "Bàn nào là của tôi?",
+      "ipa": "/wɪʧ dɛsk ɪz maɪn?/"
     },
     {
       "id": 3,
-      "sentence": "What did you think about that presenter?",
-      "translation": "Bạn nghĩ gì về người thuyết trình đó?",
-      "ipa": "/wʌt dɪd ju θɪŋk əˈbaʊt ðæt prɪˈzɛntər?/"
+      "sentence": "What time does the train arrive?",
+      "translation": "Tàu đến vào lúc mấy giờ?",
+      "ipa": "/wʌt taɪm dəz ðə treɪn əˈraɪv?/"
     },
     {
       "id": 4,
@@ -26,129 +26,723 @@
     },
     {
       "id": 5,
-      "sentence": "What do you think of the updated vacation policy?",
-      "translation": "Bạn nghĩ gì về chính sách nghỉ phép được cập nhật?",
-      "ipa": "/wʌt du ju θɪŋk əv ði əpˈdeɪtəd veɪˈkeɪʃən ˈpɑləsi?/"
-    },
-    {
-      "id": 6,
-      "sentence": "What was the topic of yesterday's workshop?",
-      "translation": "Chủ đề của buổi hội thảo hôm qua là gì?",
-      "ipa": "/wʌt wəz ðə ˈtɑpɪk əv ˈjɛstərˌdeɪz ˈwɜrkˌʃɑp?/"
-    },
-    {
-      "id": 7,
-      "sentence": "Which dance performance did you like the best?",
-      "translation": "Bạn thích tiết mục khiêu vũ nào nhất?",
-      "ipa": "/wɪʧ dæns pərˈfɔrməns dɪd ju laɪk ðə bɛst?/"
-    },
-    {
-      "id": 8,
-      "sentence": "Which of this week's training sessions should I sign up for?",
-      "translation": "Tôi nên đăng ký tham gia buổi đào tạo nào trong tuần này?",
-      "ipa": "/wɪʧ əv ðɪs wiks ˈtreɪnɪŋ ˈsɛʃənz ʃʊd aɪ saɪn ʌp fɔr?/"
-    },
-    {
-      "id": 9,
-      "sentence": "Which caterer is supplying food for the company picnic?",
-      "translation": "Nhà cung cấp dịch vụ ăn uống nào đang cung cấp thực phẩm cho buổi dã ngoại của công ty?",
-      "ipa": "/wɪʧ ˈkeɪtərər ɪz səˈplaɪɪŋ fud fɔr ðə ˈkʌmpəni ˈpɪkˌnɪk?/"
-    },
-    {
-      "id": 10,
-      "sentence": "What still needs to be done before the grand opening?",
-      "translation": "Những gì vẫn cần phải làm trước khi khai trương?",
-      "ipa": "/wʌt stɪl nidz tu bi dʌn bɪˈfɔr ðə ɡrænd ˈoʊpənɪŋ?/"
-    },
-    {
-      "id": 11,
-      "sentence": "What did you think of Ms. Delgado's job application?",
-      "translation": "Bạn nghĩ gì về đơn xin việc của cô Delgado?",
-      "ipa": "/wʌt dɪd ju θɪŋk əv ˈmɪz dɛlˈɡɑdoʊz ʤɑb ˌæplɪˈkeɪʃən?/"
-    },
-    {
-      "id": 12,
-      "sentence": "Which desk is mine?",
-      "translation": "Bàn nào là của tôi?",
-      "ipa": "/wɪʧ dɛsk ɪz maɪn?/"
-    },
-    {
-      "id": 13,
-      "sentence": "Which software programs does Allison know how to use?",
-      "translation": "Allison biết sử dụng những chương trình phần mềm nào?",
-      "ipa": "/wɪʧ ˈsɔftˌwɛr ˈproʊˌɡræmz dəz ˈæləsən noʊ haʊ tu juz?/"
-    },
-    {
-      "id": 14,
-      "sentence": "What does the conference registration fee include?",
-      "translation": "Phí đăng ký hội nghị bao gồm những gì?",
-      "ipa": "/wʌt dəz ðə ˈkɑnfərəns ˌrɛʤɪˈstreɪʃən fi ɪnˈklud?/"
-    },
-    {
-      "id": 15,
-      "sentence": "What time does the train from Milan arrive?",
-      "translation": "Tàu từ Milan đến lúc mấy giờ?",
-      "ipa": "/wʌt taɪm dəz ðə treɪn frəm mɪˈlɑn əˈraɪv?/"
-    },
-    {
-      "id": 16,
-      "sentence": "What does the timeline look like for the lobby renovations?",
-      "translation": "Dòng thời gian cho việc cải tạo sảnh đợi trông như thế nào?",
-      "ipa": "/wʌt dəz ðə ˈtaɪmˌlaɪn lʊk laɪk fɔr ðə ˈlɑbi ˌrɛnəˈveɪʃənz?/"
-    },
-    {
-      "id": 17,
-      "sentence": "What does the holiday package include?",
-      "translation": "Gói kỳ nghỉ bao gồm những gì?",
-      "ipa": "/wʌt dəz ðə ˈhɑləˌdeɪ ˈpækəʤ ɪnˈklud?/"
-    },
-    {
-      "id": 18,
-      "sentence": "Which room can we use for Thursday's client reception?",
-      "translation": "Chúng ta có thể sử dụng phòng nào cho buổi tiếp tân khách hàng vào thứ năm?",
-      "ipa": "/wɪʧ rum kæn wi juz fɔr ˈθɜrzdeɪz ˈklaɪənt rɪˈsɛpʃən?/"
-    },
-    {
-      "id": 19,
-      "sentence": "Which restaurant did Mayumi recommend?",
-      "translation": "Mayumi đã giới thiệu nhà hàng nào?",
-      "ipa": "/wɪʧ ˈrɛstəˌrɑnt dɪd maɪˈumi ˌrɛkəˈmɛnd?/"
-    },
-    {
-      "id": 20,
-      "sentence": "What color folders would you like me to buy?",
-      "translation": "Bạn muốn tôi mua những chiếc cặp màu gì?",
-      "ipa": "/wʌt ˈkʌlər ˈfoʊldərz wʊd ju laɪk mi tu baɪ?/"
-    },
-    {
-      "id": 21,
-      "sentence": "What's the membership fee at the fitness center on Oak Street?",
-      "translation": "Phí thành viên tại trung tâm thể dục trên phố Oak là bao nhiêu?",
-      "ipa": "/wʌts ðə ˈmɛmbərˌʃɪp fi æt ðə ˈfɪtnəs ˈsɛntər ɑn oʊk strit?/"
-    },
-    {
-      "id": 22,
-      "sentence": "Which printer did you buy?",
-      "translation": "Bạn đã mua máy in nào?",
-      "ipa": "/wɪʧ ˈprɪntər dɪd ju baɪ?/"
-    },
-    {
-      "id": 23,
-      "sentence": "Which of these paint colors would look best in the hallway?",
-      "translation": "Trong những màu sơn này, màu nào sẽ đẹp nhất khi sơn ở hành lang?",
-      "ipa": "/wɪʧ əv ðiz peɪnt ˈkʌlərz wʊd lʊk bɛst ɪn ðə ˈhɔlˌweɪ?/"
-    },
-    {
-      "id": 24,
       "sentence": "What time does your bus come?",
       "translation": "Xe buýt của bạn đến lúc mấy giờ?",
       "ipa": "/wʌt taɪm dəz jʊər bʌs kʌm?/"
     },
     {
+      "id": 6,
+      "sentence": "Who is retiring next month?",
+      "translation": "Ai sẽ nghỉ hưu vào tháng tới?",
+      "ipa": "/hu ɪz rɪˈtaɪərɪŋ nɛkst mʌnθ?/"
+    },
+    {
+      "id": 7,
+      "sentence": "What time does the movie start tonight?",
+      "translation": "Phim bắt đầu chiếu vào mấy giờ tối nay?",
+      "ipa": "/wʌt taɪm dəz ðə ˈmuvi stɑrt təˈnaɪt?/"
+    },
+    {
+      "id": 8,
+      "sentence": "Which printer should we order?",
+      "translation": "Chúng ta nên đặt máy in nào?",
+      "ipa": "/wɪʧ ˈprɪntər ʃʊd wi ˈɔrdər?/"
+    },
+    {
+      "id": 9,
+      "sentence": "What are your stores hours of operation?",
+      "translation": "Cửa hàng của bạn mở cửa vào giờ nào?",
+      "ipa": "/wʌt ɑr jʊər stɔrz ˈaʊərz əv ˌɑpəˈreɪʃən?/"
+    },
+    {
+      "id": 10,
+      "sentence": "What flight is he arriving on?",
+      "translation": "Anh ấy sẽ đến bằng chuyến bay nào?",
+      "ipa": "/wʌt flaɪt ɪz hi əˈraɪvɪŋ ɑn?/"
+    },
+    {
+      "id": 11,
+      "sentence": "Which department is on the second floor?",
+      "translation": "Bộ phận nào ở tầng hai?",
+      "ipa": "/wɪʧ dɪˈpɑrtmənt ɪz ɑn ðə ˈsɛkənd flɔr?/"
+    },
+    {
+      "id": 12,
+      "sentence": "Where is the conference room on this floor?",
+      "translation": "Phòng hội nghị ở tầng này ở đâu?",
+      "ipa": "/wɛr ɪz ðə ˈkɑnfərəns rum ɑn ðɪs flɔr?/"
+    },
+    {
+      "id": 13,
+      "sentence": "Where will the training session be held?",
+      "translation": "Buổi đào tạo sẽ diễn ra ở đâu?",
+      "ipa": "/wɛr wɪl ðə ˈtreɪnɪŋ ˈsɛʃən bi hɛld?/"
+    },
+    {
+      "id": 14,
+      "sentence": "Where should we leave the cleaning supplies?",
+      "translation": "Chúng ta nên để vật dụng làm sạch ở đâu?",
+      "ipa": "/wɛr ʃʊd wi liv ðə ˈklinɪŋ səˈplaɪz?/"
+    },
+    {
+      "id": 15,
+      "sentence": "How do I renew my membership?",
+      "translation": "Làm thế nào để tôi gia hạn tư cách thành viên của mình?",
+      "ipa": "/haʊ du aɪ rɪˈnu maɪ ˈmɛmbərˌʃɪp?/"
+    },
+    {
+      "id": 16,
+      "sentence": "Which printer did you buy?",
+      "translation": "Bạn đã mua máy in nào?",
+      "ipa": "/wɪʧ ˈprɪntər dɪd ju baɪ?/"
+    },
+    {
+      "id": 17,
+      "sentence": "What's the best way to reach you?",
+      "translation": "Cách tốt nhất để liên lạc với bạn là gi?",
+      "ipa": "/wʌts ðə bɛst weɪ tu riʧ ju?/"
+    },
+    {
+      "id": 18,
+      "sentence": "What's the phone number for the pharmacy?",
+      "translation": "Số điện thoại của hiệu thuốc là gì?",
+      "ipa": "/wʌts ðə foʊn ˈnʌmbər fɔr ðə ˈfɑrməsi?/"
+    },
+    {
+      "id": 19,
+      "sentence": "Who's going to introduce the speaker?",
+      "translation": "Ai sẽ giới thiệu diễn giả?",
+      "ipa": "/huz ˈɡoʊɪŋ tu ˌɪntrəˈdus ðə ˈspikər?/"
+    },
+    {
+      "id": 20,
+      "sentence": "Who can bring the clients upstairs?",
+      "translation": "Ai có thể đưa khách hàng lên tầng trên?",
+      "ipa": "/hu kæn brɪŋ ðə ˈklaɪənts əpˈstɛrz?/"
+    },
+    {
+      "id": 21,
+      "sentence": "What are we ordering for lunch?",
+      "translation": "Chúng ta sẽ gọi món gì cho bữa trưa?",
+      "ipa": "/wʌt ɑr wi ˈɔrdərɪŋ fɔr lʌnʧ?/"
+    },
+    {
+      "id": 22,
+      "sentence": "What kind of tablet computer do you have?",
+      "translation": "Bạn có loại máy tính bảng nào?",
+      "ipa": "/wʌt kaɪnd əv ˈtæblət kəmˈpjutər du ju hæv?/"
+    },
+    {
+      "id": 23,
+      "sentence": "What is the topic of today's seminar?",
+      "translation": "Chủ đề của hội thảo hôm nay là gì?",
+      "ipa": "/wʌt ɪz ðə ˈtɑpɪk əv təˈdeɪz ˈsɛmɪˌnɑr?/"
+    },
+    {
+      "id": 24,
+      "sentence": "Where did you store the extra name tags?",
+      "translation": "Bạn đã cất những thẻ tên dự phòng ở đâu?",
+      "ipa": "/wɛr dɪd ju stɔr ði ˈɛkstrə neɪm tæɡz?/"
+    },
+    {
       "id": 25,
+      "sentence": "Where can I get a key for the hotel gym?",
+      "translation": "Tôi có thể lấy chia khóa cho phòng tập thể dục của khách sạn ở đâu?",
+      "ipa": "/wɛr kæn aɪ ɡɛt ə ki fɔr ðə hoʊˈtɛl ʤɪm?/"
+    }
+  ],
+  "level2": [
+    {
+      "id": 26,
+      "sentence": "When should we discuss the sales figure?",
+      "translation": "Khi nào chúng ta nên thảo luận về số liệu bản hàng?",
+      "ipa": "/wɛn ʃʊd wi dɪˈskʌs ðə seɪlz ˈfɪɡjər?/"
+    },
+    {
+      "id": 27,
+      "sentence": "What did you think about that presenter?",
+      "translation": "Bạn nghĩ gì về người thuyết trình đó?",
+      "ipa": "/wʌt dɪd ju θɪŋk əˈbaʊt ðæt prɪˈzɛntər?/"
+    },
+    {
+      "id": 28,
+      "sentence": "What happened at the workshop yesterday?",
+      "translation": "Chuyện gì đã xảy ra tại hội thảo hôm qua?",
+      "ipa": "/wʌt ˈhæpənd æt ðə ˈwɜrkˌʃɑp ˈjɛstərˌdeɪ?/"
+    },
+    {
+      "id": 29,
+      "sentence": "What was the topic of yesterday's workshop?",
+      "translation": "Chủ đề của buổi hội thảo hôm qua là gì?",
+      "ipa": "/wʌt wəz ðə ˈtɑpɪk əv ˈjɛstərˌdeɪz ˈwɜrkˌʃɑp?/"
+    },
+    {
+      "id": 30,
+      "sentence": "Which dance performance did you like the best?",
+      "translation": "Bạn thích tiết mục khiêu vũ nào nhất?",
+      "ipa": "/wɪʧ dæns pərˈfɔrməns dɪd ju laɪk ðə bɛst?/"
+    },
+    {
+      "id": 31,
+      "sentence": "Which restaurant did Mayumi recommend?",
+      "translation": "Mayumi đã giới thiệu nhà hàng nào?",
+      "ipa": "/wɪʧ ˈrɛstəˌrɑnt dɪd maɪˈumi ˌrɛkəˈmɛnd?/"
+    },
+    {
+      "id": 32,
+      "sentence": "What color folders would you like me to buy?",
+      "translation": "Bạn muốn tôi mua những chiếc cặp màu gì?",
+      "ipa": "/wʌt ˈkʌlər ˈfoʊldərz wʊd ju laɪk mi tu baɪ?/"
+    },
+    {
+      "id": 33,
+      "sentence": "What's the membership fee at the fitness center on Oak Street?",
+      "translation": "Phí thành viên tại trung tâm thể dục trên phố Oak là bao nhiêu?",
+      "ipa": "/wʌts ðə ˈmɛmbərˌʃɪp fi æt ðə ˈfɪtnəs ˈsɛntər ɑn oʊk strit?/"
+    },
+    {
+      "id": 34,
       "sentence": "Which factory produces these umbrellas?",
       "translation": "Nhà máy nào sản xuất những chiếc ô này?",
       "ipa": "/wɪʧ ˈfæktəri prəˈdusɪz ðiz əmˈbrɛləz?/"
+    },
+    {
+      "id": 35,
+      "sentence": "How soon can we announce the staff promotions?",
+      "translation": "Khi nào chúng ta có thể thông báo về việc thăng chức cho nhân viên?",
+      "ipa": "/haʊ sun kæn wi əˈnaʊns ðə stæf prəˈmoʊʃənz?/"
+    },
+    {
+      "id": 36,
+      "sentence": "How do I log in to my e-mail account?",
+      "translation": "Làm thế nào để tôi đăng nhập vào tài khoản email của mình?",
+      "ipa": "/haʊ du aɪ lɔɡ ɪn tu maɪ ˈiˌmeɪl əˈkaʊnt?/"
+    },
+    {
+      "id": 37,
+      "sentence": "When are you planning to put your house up for sale?",
+      "translation": "Khi nào bạn dự định đưa ngôi nhà của minh lên bán?",
+      "ipa": "/wɛn ɑr ju ˈplænɪŋ tu pʊt jʊər haʊs ʌp fɔr seɪl?/"
+    },
+    {
+      "id": 38,
+      "sentence": "When will Mr. Stein's book be available?",
+      "translation": "Khi nào sách của ông Stein sẽ có sẵn?",
+      "ipa": "/wɛn wɪl ˈmɪstər staɪnz bʊk bi əˈveɪləbəl?/"
+    },
+    {
+      "id": 39,
+      "sentence": "When is your connecting flight to Newark?",
+      "translation": "Chuyến bay nổi chuyến của bạn đến Newark khi nào?",
+      "ipa": "/wɛn ɪz jʊər kəˈnɛktɪŋ flaɪt tu ˈnuərk?/"
+    },
+    {
+      "id": 40,
+      "sentence": "Where are the best available seats for tonight's performance?",
+      "translation": "Các ghế tốt nhất hiện có cho buổi biểu diễn tối nay ở đâu?",
+      "ipa": "/wɛr ɑr ðə bɛst əˈveɪləbəl sits fɔr təˈnaɪts pərˈfɔrməns?/"
+    },
+    {
+      "id": 41,
+      "sentence": "When will the board meeting be over?",
+      "translation": "Khi nào cuộc họp hội đồng sẽ kết thúc?",
+      "ipa": "/wɛn wɪl ðə bɔrd ˈmitɪŋ bi ˈoʊvər?/"
+    },
+    {
+      "id": 42,
+      "sentence": "When does Mr. Cho want to pick up his cake?",
+      "translation": "Khi nào ông Cho muốn lấy bánh của mình?",
+      "ipa": "/wɛn dəz ˈmɪstər ʧoʊ wɑnt tu pɪk ʌp hɪz keɪk?/"
+    },
+    {
+      "id": 43,
+      "sentence": "Who designed the floor plan?",
+      "translation": "Ai đã thiết kế sơ đồ mặt bằng?",
+      "ipa": "/hu dɪˈzaɪnd ðə flɔr plæn?/"
+    },
+    {
+      "id": 44,
+      "sentence": "What should I bring to the trade show?",
+      "translation": "Tôi nên mang gì đến hội chợ thương mại?",
+      "ipa": "/wʌt ʃʊd aɪ brɪŋ tu ðə treɪd ʃoʊ?/"
+    },
+    {
+      "id": 45,
+      "sentence": "Who is that man over there talking with Greg?",
+      "translation": "Người đàn ông đang nói chuyện với Greg kia là ai vậy?",
+      "ipa": "/hu ɪz ðæt mæn ˈoʊvər ðɛr ˈtɔkɪŋ wɪð ɡrɛɡ?/"
+    },
+    {
+      "id": 46,
+      "sentence": "What is the Doctor Hnedez's memo about?",
+      "translation": "Bản ghi nhớ của Bác sĩ Hnedez nói về điều gì?",
+      "ipa": "/wʌt ɪz ðə ˈdɑktər hɛˈnɛdɛzɪz ˈmɛmoʊ əˈbaʊt?/"
+    },
+    {
+      "id": 47,
+      "sentence": "What was the conference about?",
+      "translation": "Hội nghị về chủ đề gì?",
+      "ipa": "/wʌt wəz ðə ˈkɑnfərəns əˈbaʊt?/"
+    },
+    {
+      "id": 48,
+      "sentence": "Which path do I take to get to the lake?",
+      "translation": "Tôi nên đi con đường nào để đến hồ?",
+      "ipa": "/wɪʧ pæθ du aɪ teɪk tu ɡɛt tu ðə leɪk?/"
+    },
+    {
+      "id": 49,
+      "sentence": "Who's the target audience for this advertisement?",
+      "translation": "Đối tượng mục tiêu của quảng cáo này là ai?",
+      "ipa": "/huz ðə ˈtɑrɡət ˈɔdiəns fɔr ðɪs ˈædvərˌtaɪzmənt?/"
+    },
+    {
+      "id": 50,
+      "sentence": "Who else will participate in the conference call tomorrow?",
+      "translation": "Ai khác sẽ tham gia cuộc gọi hội nghị vào ngày mai?",
+      "ipa": "/hu ɛls wɪl pɑrˈtɪsəˌpeɪt ɪn ðə ˈkɑnfərəns kɔl təˈmɑˌroʊ?/"
+    },
+    {
+      "id": 51,
+      "sentence": "What's the dress code in this office?",
+      "translation": "Quy định trang phục tại văn phòng này là gì?",
+      "ipa": "/wʌts ðə drɛs koʊd ɪn ðɪs ˈɔfɪs?/"
+    },
+    {
+      "id": 52,
+      "sentence": "What happened to those files we worked on?",
+      "translation": "Điều gì đã xảy ra với những tài liệu mà chúng ta đã làm việc?",
+      "ipa": "/wʌt ˈhæpənd tu ðoʊz faɪlz wi wɜrkt ɑn?/"
+    },
+    {
+      "id": 53,
+      "sentence": "What kind of decoration would you like on the tables?",
+      "translation": "Bạn muốn loại trang trí nào trên các bàn?",
+      "ipa": "/wʌt kaɪnd əv ˌdɛkəˈreɪʃən wʊd ju laɪk ɑn ðə ˈteɪbəlz?/"
+    },
+    {
+      "id": 54,
+      "sentence": "Who's going to lead the training session today?",
+      "translation": "Ai sẽ dẫn dắt buổi đào tạo hôm nay?",
+      "ipa": "/huz ˈɡoʊɪŋ tu lid ðə ˈtreɪnɪŋ ˈsɛʃən təˈdeɪ?/"
+    },
+    {
+      "id": 55,
+      "sentence": "What are the delivery options for mailing this package?",
+      "translation": "Các tùy chọn giao hàng nào cho việc gửi gói hàng này?",
+      "ipa": "/wʌt ɑr ðə dɪˈlɪvəri ˈɑpʃənz fɔr ˈmeɪlɪŋ ðɪs ˈpækəʤ?/"
+    }
+  ],
+  "level3": [
+    {
+      "id": 56,
+      "sentence": "What do you think of the updated vacation policy?",
+      "translation": "Bạn nghĩ gì về chính sách nghỉ phép được cập nhật?",
+      "ipa": "/wʌt du ju θɪŋk əv ði əpˈdeɪtəd veɪˈkeɪʃən ˈpɑləsi?/"
+    },
+    {
+      "id": 57,
+      "sentence": "Which of this week's training sessions should I sign up for?",
+      "translation": "Tôi nên đăng ký tham gia buổi đào tạo nào trong tuần này?",
+      "ipa": "/wɪʧ əv ðɪs wiks ˈtreɪnɪŋ ˈsɛʃənz ʃʊd aɪ saɪn ʌp fɔr?/"
+    },
+    {
+      "id": 58,
+      "sentence": "What did you think of Ms. Delgado's job application?",
+      "translation": "Bạn nghĩ gì về đơn xin việc của cô Delgado?",
+      "ipa": "/wʌt dɪd ju θɪŋk əv ˈmɪz dɛlˈɡɑdoʊz ʤɑb ˌæplɪˈkeɪʃən?/"
+    },
+    {
+      "id": 59,
+      "sentence": "Which software programs does Allison know how to use?",
+      "translation": "Allison biết sử dụng những chương trình phần mềm nào?",
+      "ipa": "/wɪʧ ˈsɔftˌwɛr ˈproʊˌɡræmz dəz ˈæləsən noʊ haʊ tu juz?/"
+    },
+    {
+      "id": 60,
+      "sentence": "What does the conference registration fee include?",
+      "translation": "Phí đăng ký hội nghị bao gồm những gì?",
+      "ipa": "/wʌt dəz ðə ˈkɑnfərəns ˌrɛʤɪˈstreɪʃən fi ɪnˈklud?/"
+    },
+    {
+      "id": 61,
+      "sentence": "What does the timeline look like for the lobby renovations?",
+      "translation": "Dòng thời gian cho việc cải tạo sảnh đợi trông như thế nào?",
+      "ipa": "/wʌt dəz ðə ˈtaɪmˌlaɪn lʊk laɪk fɔr ðə ˈlɑbi ˌrɛnəˈveɪʃənz?/"
+    },
+    {
+      "id": 62,
+      "sentence": "What does the holiday package include?",
+      "translation": "Gói kỳ nghỉ bao gồm những gì?",
+      "ipa": "/wʌt dəz ðə ˈhɑləˌdeɪ ˈpækəʤ ɪnˈklud?/"
+    },
+    {
+      "id": 63,
+      "sentence": "Which room can we use for Thursday's client reception?",
+      "translation": "Chúng ta có thể sử dụng phòng nào cho buổi tiếp tân khách hàng vào thứ năm?",
+      "ipa": "/wɪʧ rum kæn wi juz fɔr ˈθɜrzdeɪz ˈklaɪənt rɪˈsɛpʃən?/"
+    },
+    {
+      "id": 64,
+      "sentence": "Which of these paint colors would look best in the hallway?",
+      "translation": "Trong những màu sơn này, màu nào sẽ đẹp nhất khi sơn ở hành lang?",
+      "ipa": "/wɪʧ əv ðiz peɪnt ˈkʌlərz wʊd lʊk bɛst ɪn ðə ˈhɔlˌweɪ?/"
+    },
+    {
+      "id": 65,
+      "sentence": "Why did you order so many file folders?",
+      "translation": "Tại sao bạn lại đặt nhiều bia tài liệu như vậy?",
+      "ipa": "/waɪ dɪd ju ˈɔrdər soʊ ˈmɛni faɪl ˈfoʊldərz?/"
+    },
+    {
+      "id": 66,
+      "sentence": "Why was the company picnic rescheduled?",
+      "translation": "Tại sao buổi dã ngoại của công ty bị dời lại?",
+      "ipa": "/waɪ wəz ðə ˈkʌmpəni ˈpɪkˌnɪk ˌriˈskɛʤʊld?/"
+    },
+    {
+      "id": 67,
+      "sentence": "Why was the office furniture we ordered returned to the warehouse?",
+      "translation": "Tại sao nội thất văn phòng mà chúng tôi đặt lại được trả lại kho?",
+      "ipa": "/waɪ wəz ði ˈɔfɪs ˈfɜrnɪʧər wi ˈɔrdərd rɪˈtɜrnd tu ðə ˈwɛrˌhaʊs?/"
+    },
+    {
+      "id": 68,
+      "sentence": "How's the construction of the new office building coming along?",
+      "translation": "Việc xây dựng tòa nhà văn phòng mới đang tiến triển như thế nào?",
+      "ipa": "/haʊz ðə kənˈstrʌkʃən əv ðə nu ˈɔfɪs ˈbɪldɪŋ ˈkʌmɪŋ əˈlɔŋ?/"
+    },
+    {
+      "id": 69,
+      "sentence": "Why isn't Matt's contact information in the company directory?",
+      "translation": "Tại sao thông tin liên lạc của Matt không có trong danh bạ công ty?",
+      "ipa": "/waɪ ˈɪzənt mæts ˈkɑnˌtækt ˌɪnfərˈmeɪʃən ɪn ðə ˈkʌmpəni dɪˈrɛktəri?/"
+    },
+    {
+      "id": 70,
+      "sentence": "How can we increase our sales?",
+      "translation": "Chúng ta có thể tăng doanh số bán hàng của mình bằng cách nào?",
+      "ipa": "/haʊ kæn wi ɪnˈkris ˈaʊər seɪlz?/"
+    },
+    {
+      "id": 71,
+      "sentence": "How can I place a catering order for an event?",
+      "translation": "Làm thế nào để tôi có thể đặt dịch vụ ăn uống cho một sự kiện?",
+      "ipa": "/haʊ kæn aɪ pleɪs ə ˈkeɪtərɪŋ ˈɔrdər fɔr ən ɪˈvɛnt?/"
+    },
+    {
+      "id": 72,
+      "sentence": "Why did Louisa decide to retire this year?",
+      "translation": "Tại sao Louisa quyết định nghỉ hưu năm nay?",
+      "ipa": "/waɪ dɪd luˈisə dɪˈsaɪd tu rɪˈtaɪər ðɪs jɪr?/"
+    },
+    {
+      "id": 73,
+      "sentence": "Why's everybody waiting in front of the building?",
+      "translation": "Tại sao mọi người đang chờ trước tòa nhà?",
+      "ipa": "/waɪz ˈɛvriˌbɑdi ˈweɪtɪŋ ɪn frʌnt əv ðə ˈbɪldɪŋ?/"
+    },
+    {
+      "id": 74,
+      "sentence": "How often does the coffee machine need to be cleaned?",
+      "translation": "Máy pha cà phê cần được làm sạch bao lâu một lần?",
+      "ipa": "/haʊ ˈɔfən dəz ðə ˈkɔfi məˈʃin nid tu bi klind?/"
+    },
+    {
+      "id": 75,
+      "sentence": "Why does the office look so empty this afternoon?",
+      "translation": "Tại sao văn phòng trông rất vắng vào chiều nay?",
+      "ipa": "/waɪ dəz ði ˈɔfɪs lʊk soʊ ˈɛmpti ðɪs ˌæftərˈnun?/"
+    },
+    {
+      "id": 76,
+      "sentence": "How can I create a new user account on this computer?",
+      "translation": "Làm thế nào tôi có thể tạo một tài khoản người dùng mới trên máy tính này?",
+      "ipa": "/haʊ kæn aɪ kriˈeɪt ə nu ˈjuzər əˈkaʊnt ɑn ðɪs kəmˈpjutər?/"
+    },
+    {
+      "id": 77,
+      "sentence": "Why do you need to reschedule your appointment?",
+      "translation": "Tại sao bạn cần phải lên lịch lại cuộc hẹn của mình?",
+      "ipa": "/waɪ du ju nid tu ˌriˈskɛʤʊl jʊər əˈpɔɪntmənt?/"
+    },
+    {
+      "id": 80,
+      "sentence": "When will you start interviewing job candidates?",
+      "translation": "Khi nào bạn sẽ bắt đầu phỏng vấn các ứng viên?",
+      "ipa": "/wɛn wɪl ju stɑrt ˈɪntərˌvjuɪŋ ʤɑb ˈkændəˌdeɪts?/"
+    },
+    {
+      "id": 81,
+      "sentence": "When was the last time you updated the company website?",
+      "translation": "Lần cuối cùng bạn cập nhật trang web của công ty là khi nào?",
+      "ipa": "/wɛn wəz ðə læst taɪm ju əpˈdeɪtəd ðə ˈkʌmpəni ˈwɛbˌsaɪt?/"
+    },
+    {
+      "id": 82,
+      "sentence": "When should we expect to receive payment?",
+      "translation": "Khi nào chúng ta nên mong đợi nhận được thanh toán?",
+      "ipa": "/wɛn ʃʊd wi ɪkˈspɛkt tu rəˈsiv ˈpeɪmənt?/"
+    },
+    {
+      "id": 83,
+      "sentence": "When should we submit the project proposal?",
+      "translation": "Khi nào chúng ta nên nộp đề xuất dự án?",
+      "ipa": "/wɛn ʃʊd wi səbˈmɪt ðə ˈprɑʤɛkt prəˈpoʊzəl?/"
+    },
+    {
+      "id": 84,
+      "sentence": "When will the employee telephone directory be ready?",
+      "translation": "Khi nào danh bạ điện thoại nhân viên sẽ sẵn sàng?",
+      "ipa": "/wɛn wɪl ði ɛmˈplɔɪi ˈtɛləˌfoʊn dɪˈrɛktəri bi ˈrɛdi?/"
+    },
+    {
+      "id": 85,
+      "sentence": "Who is in charge of designing the prototype?",
+      "translation": "Ai chịu trách nhiệm thiết kế nguyên mẫu?",
+      "ipa": "/hu ɪz ɪn ʧɑrʤ əv dɪˈzaɪnɪŋ ðə ˈproʊtəˌtaɪp?/"
+    },
+    {
+      "id": 86,
+      "sentence": "Which order still need to be processed?",
+      "translation": "Đơn hàng nào vẫn cần được xử lý?",
+      "ipa": "/wɪʧ ˈɔrdər stɪl nid tu bi ˈprɑsɛst?/"
+    },
+    {
+      "id": 87,
+      "sentence": "Who should I tell if I need to leave early?",
+      "translation": "Tôi nên nói với ai nếu tôi muốn về sớm?",
+      "ipa": "/hu ʃʊd aɪ tɛl ɪf aɪ nid tu liv ˈɜrli?/"
+    },
+    {
+      "id": 88,
+      "sentence": "What are these sweaters made of?",
+      "translation": "Những chiếc áo len này được làm bằng gi?",
+      "ipa": "/wʌt ɑr ðiz ˈswɛtərz meɪd əv?/"
+    },
+    {
+      "id": 89,
+      "sentence": "Who does this reference manual belong to?",
+      "translation": "Số tay tham khảo này thuộc về ai?",
+      "ipa": "/hu dəz ðɪs ˈrɛfərəns ˈmænjuəl bɪˈlɔŋ tu?/"
+    },
+    {
+      "id": 90,
+      "sentence": "What phone service do you use?",
+      "translation": "Bạn sử dụng dịch vụ điện thoại nào?",
+      "ipa": "/wʌt foʊn ˈsɜrvɪs du ju juz?/"
+    }
+  ],
+  "level4": [
+    {
+      "id": 91,
+      "sentence": "Which caterer is supplying food for the company picnic?",
+      "translation": "Nhà cung cấp dịch vụ ăn uống nào đang cung cấp thực phẩm cho buổi dã ngoại của công ty?",
+      "ipa": "/wɪʧ ˈkeɪtərər ɪz səˈplaɪɪŋ fud fɔr ðə ˈkʌmpəni ˈpɪkˌnɪk?/"
+    },
+    {
+      "id": 92,
+      "sentence": "What still needs to be done before the grand opening?",
+      "translation": "Những gì vẫn cần phải làm trước khi khai trương?",
+      "ipa": "/wʌt stɪl nidz tu bi dʌn bɪˈfɔr ðə ɡrænd ˈoʊpənɪŋ?/"
+    },
+    {
+      "id": 93,
+      "sentence": "How many times have you relocated for work?",
+      "translation": "Bạn đã chuyển địa điểm công việc bao nhiêu lần?",
+      "ipa": "/haʊ ˈmɛni taɪmz hæv ju ˌriˈloʊkeɪtəd fɔr wɜrk?/"
+    },
+    {
+      "id": 94,
+      "sentence": "Why did Doctor Warner post the study results online?",
+      "translation": "Tại sao Bác sĩ Warner đăng kết quả nghiên cứu trực tuyến?",
+      "ipa": "/waɪ dɪd ˈdɑktər ˈwɔrnər poʊst ðə ˈstʌdi rɪˈzʌlts ˈɔnˌlaɪn?/"
+    },
+    {
+      "id": 95,
+      "sentence": "Why was the finance department's meeting postponed?",
+      "translation": "Tại sao cuộc họp của bộ phận tài chính bị hoãn lại?",
+      "ipa": "/waɪ wəz ðə fəˈnæns dɪˈpɑrtmənts ˈmitɪŋ poʊstˈpoʊnd?/"
+    },
+    {
+      "id": 96,
+      "sentence": "How many market surveys were conducted last year?",
+      "translation": "Bao nhiêu cuộc khảo sát thị trường đã được thực hiện vào năm ngoái?",
+      "ipa": "/haʊ ˈmɛni ˈmɑrkət ˈsɜrˌveɪz wər kənˈdʌktəd læst jɪr?/"
+    },
+    {
+      "id": 97,
+      "sentence": "Why were our expenses over budget last month?",
+      "translation": "Tại sao chi phí của chúng ta vượt ngân sách vào tháng trước?",
+      "ipa": "/waɪ wər ˈaʊər ɪkˈspɛnsɪz ˈoʊvər ˈbʌʤɪt læst mʌnθ?/"
+    },
+    {
+      "id": 98,
+      "sentence": "How long have you been employed at this organization?",
+      "translation": "Bạn đã làm việc tại tổ chức này bao lâu rồi?",
+      "ipa": "/haʊ lɔŋ hæv ju bɪn ɛmˈplɔɪd æt ðɪs ˌɔrɡənəˈzeɪʃən?/"
+    },
+    {
+      "id": 99,
+      "sentence": "Why does Ms. Yamada want access to the laboratory?",
+      "translation": "Tại sao cô Yamada muốn truy cập vào phòng thí nghiệm?",
+      "ipa": "/waɪ dəz ˈmɪz jɑˈmɑdə wɑnt ˈækˌsɛs tu ðə ˈlæbrəˌtɔri?/"
+    },
+    {
+      "id": 100,
+      "sentence": "How will the contest winners receive their gift certificates?",
+      "translation": "Những người chiến thắng cuộc thi sẽ nhận được phiếu quà tặng của họ như thế nào?",
+      "ipa": "/haʊ wɪl ðə ˈkɑnˌtɛst ˈwɪnərz rəˈsiv ðɛr ɡɪft sərˈtɪfɪkəts?/"
+    },
+    {
+      "id": 101,
+      "sentence": "Why was the time of the morning news program changed?",
+      "translation": "Tại sao thời gian của chương trình tin tức buổi sáng bị thay đổi?",
+      "ipa": "/waɪ wəz ðə taɪm əv ðə ˈmɔrnɪŋ nuz ˈproʊˌɡræm ʧeɪnʤd?/"
+    },
+    {
+      "id": 102,
+      "sentence": "Where can I leave my completed questionnaire?",
+      "translation": "Tôi có thể để bảng câu hỏi đã hoàn thành của minh ở đâu?",
+      "ipa": "/wɛr kæn aɪ liv maɪ kəmˈplitəd ˌkwɛsʧəˈnɛr?/"
+    },
+    {
+      "id": 103,
+      "sentence": "Where can I get a copy of the weekly newsletter?",
+      "translation": "Tôi có thể lấy một bản sao của bản tin hàng tuần ở đâu?",
+      "ipa": "/wɛr kæn aɪ ɡɛt ə ˈkɑpi əv ðə ˈwikli ˈnuzˌlɛtər?/"
+    },
+    {
+      "id": 104,
+      "sentence": "Where can I find Li's e-mail address?",
+      "translation": "Tôi có thể tìm địa chỉ email của Li ở đâu?",
+      "ipa": "/wɛr kæn aɪ faɪnd liz ˈiˌmeɪl əˈdrɛs?/"
+    },
+    {
+      "id": 105,
+      "sentence": "Where would you like me to leave this report?",
+      "translation": "Bạn muốn tôi để báo cáo này ở đâu?",
+      "ipa": "/wɛr wʊd ju laɪk mi tu liv ðɪs rɪˈpɔrt?/"
+    },
+    {
+      "id": 106,
+      "sentence": "Where can I rent commercial space downtown?",
+      "translation": "Tôi có thể thuê mặt bằng thương mại ở trung tâm thành phố ở đâu?",
+      "ipa": "/wɛr kæn aɪ rɛnt kəˈmɜrʃəl speɪs ˌdaʊnˈtaʊn?/"
+    },
+    {
+      "id": 107,
+      "sentence": "When do you think we'll hear if we've won the Jones account?",
+      "translation": "Bạn nghĩ khi nào chúng ta sẽ biết liệu mình có giành được tài khoản của Jones không?",
+      "ipa": "/wɛn du ju θɪŋk wil hir ɪf wiv wʌn ðə ʤoʊnz əˈkaʊnt?/"
+    },
+    {
+      "id": 108,
+      "sentence": "Where can I find an employee-referral form?",
+      "translation": "Tôi có thể tìm mẫu giới thiệu nhân viên ở đâu?",
+      "ipa": "/wɛr kæn aɪ faɪnd ən ɛmˈplɔɪi-rɪˈfɜrəl fɔrm?/"
+    },
+    {
+      "id": 109,
+      "sentence": "Which of your dairy products are produced locally?",
+      "translation": "Các sản phẩm từ sữa nào của bạn được sản xuất tại địa phương?",
+      "ipa": "/wɪʧ əv jʊər ˈdɛri ˈprɑdəkts ɑr prəˈdust ˈloʊkəli?/"
+    },
+    {
+      "id": 110,
+      "sentence": "Which training course did you register for?",
+      "translation": "Bạn đã đăng ký khóa đào tạo nào?",
+      "ipa": "/wɪʧ ˈtreɪnɪŋ kɔrs dɪd ju ˈrɛʤɪstər fɔr?/"
+    },
+    {
+      "id": 111,
+      "sentence": "Which of you approved to this loan application?",
+      "translation": "Ai trong số các bạn đã chấp thuận đơn xin vay nay?",
+      "ipa": "/wɪʧ əv ju əˈpruvd tu ðɪs loʊn ˌæplɪˈkeɪʃən?/"
+    },
+    {
+      "id": 112,
+      "sentence": "Who was selected to work on the advertising project?",
+      "translation": "Ai được bầu làm việc cho dự án quảng cáo?",
+      "ipa": "/hu wəz səˈlɛktəd tu wɜrk ɑn ði ˈædvərˌtaɪzɪŋ ˈprɑʤɛkt?/"
+    },
+    {
+      "id": 113,
+      "sentence": "Which roads should I take to get to city hall?",
+      "translation": "Tôi nên đi đường nào để đến tòa thị chính?",
+      "ipa": "/wɪʧ roʊdz ʃʊd aɪ teɪk tu ɡɛt tu ˈsɪti hɔl?/"
+    },
+    {
+      "id": 114,
+      "sentence": "What is the best way to get to the riverside café?",
+      "translation": "Cách tốt nhất để đến quán cà phê ven sông là gì?",
+      "ipa": "/wʌt ɪz ðə bɛst weɪ tu ɡɛt tu ðə ˈrɪvərˌsaɪd kæˈfeɪ?/"
+    },
+    {
+      "id": 115,
+      "sentence": "Who do you think we should offer the position to?",
+      "translation": "Bạn nghĩ chúng ta nên đề nghị vị trí này cho ai?",
+      "ipa": "/hu du ju θɪŋk wi ʃʊd ˈɔfər ðə pəˈzɪʃən tu?/"
+    },
+    {
+      "id": 116,
+      "sentence": "Which design was chosen for the company letterhead?",
+      "translation": "Thiết kế nào đã được chọn cho tiêu đề thư của công ty?",
+      "ipa": "/wɪʧ dɪˈzaɪn wəz ˈʧoʊzən fɔr ðə ˈkʌmpəni ˈlɛtərˌhɛd?/"
+    },
+    {
+      "id": 117,
+      "sentence": "Who'll be in charge of finalizing the contract with Parker Associates?",
+      "translation": "Ai sẽ chịu trách nhiệm hoàn tất hợp đồng với Parker Associates?",
+      "ipa": "/hul bi ɪn ʧɑrʤ əv ˈfaɪnəˌlaɪzɪŋ ðə ˈkɑnˌtrækt wɪð ˈpɑrkər əˈsoʊʃiəts?/"
+    },
+    {
+      "id": 118,
+      "sentence": "Which of you approved this loan application?",
+      "translation": "Ai trong số các bạn đã phê duyệt đơn vay này?",
+      "ipa": "/wɪʧ əv ju əˈpruvd ðɪs loʊn ˌæplɪˈkeɪʃən?/"
+    },
+    {
+      "id": 119,
+      "sentence": "Which branch should we ship this package to?",
+      "translation": "Chúng ta nên gửi gói hàng này đến chi nhánh nào?",
+      "ipa": "/wɪʧ brænʧ ʃʊd wi ʃɪp ðɪs ˈpækəʤ tu?/"
+    },
+    {
+      "id": 120,
+      "sentence": "Who was selected to work on the advertising project?",
+      "translation": "Ai đã được chọn để làm việc trong dự án quảng cáo?",
+      "ipa": "/hu wəz səˈlɛktəd tu wɜrk ɑn ði ˈædvərˌtaɪzɪŋ ˈprɑʤɛkt?/"
+    },
+    {
+      "id": 121,
+      "sentence": "Which of your dairy products are produced locally?",
+      "translation": "Sản phẩm sữa nào của bạn được sản xuất tại địa phương?",
+      "ipa": "/wɪʧ əv jʊər ˈdɛri ˈprɑdəkts ɑr prəˈdust ˈloʊkəli?/"
+    },
+    {
+      "id": 122,
+      "sentence": "Who should I tell if I need to leave early?",
+      "translation": "Tôi nên thông báo với ai nếu cần rời đi sớm?",
+      "ipa": "/hu ʃʊd aɪ tɛl ɪf aɪ nid tu liv ˈɜrli?/"
+    },
+    {
+      "id": 123,
+      "sentence": "Who is retiring next month?",
+      "translation": "Ai sẽ nghỉ hưu vào tháng tới?",
+      "ipa": "/hu ɪz rɪˈtaɪərɪŋ nɛkst mʌnθ?/"
+    },
+    {
+      "id": 124,
+      "sentence": "What time does the train arrive?",
+      "translation": "Tàu đến vào lúc mấy giờ?",
+      "ipa": "/wʌt taɪm dəz ðə treɪn əˈraɪv?/"
+    },
+    {
+      "id": 125,
+      "sentence": "Who is in charge of designing the prototype?",
+      "translation": "Ai chịu trách nhiệm thiết kế nguyên mẫu?",
+      "ipa": "/hu ɪz ɪn ʧɑrʤ əv dɪˈzaɪnɪŋ ðə ˈproʊtəˌtaɪp?/"
     }
   ]
 }
