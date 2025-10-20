@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- DOM Elements ---
     const levelSelectionScreen = document.getElementById('level-selection-screen');
     const practiceScreen = document.getElementById('practice-screen');
-    const levelButtons = document.querySelectorAll('.level-btn');
+    // Only select buttons that have a data-level attribute (exclude the summary button)
+    const levelButtons = document.querySelectorAll('.level-btn[data-level]');
     const backToLevelsBtn = document.getElementById('back-to-levels-btn');
     const practiceHeader = document.getElementById('practice-header');
     const progressText = document.getElementById('progress-text');
@@ -16,7 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const pronunciationScoreEl = document.getElementById('pronunciation-score');
     const translationInputEl = document.getElementById('translation-input');
     const checkTranslationBtn = document.getElementById('check-translation-btn');
+    // Translation mode UI
+    const translationModeRecordBtn = document.getElementById('translation-mode-record');
+    const translationModeTypeBtn = document.getElementById('translation-mode-type');
+    const translationRecordSection = document.getElementById('translation-record-section');
+    const translationTypeSection = document.getElementById('translation-type-section');
+    const recordTranslationBtn = document.getElementById('record-translation-btn');
+    const translationRecordResultEl = document.getElementById('translation-record-result');
     const correctTranslationEl = document.getElementById('correct-translation');
+    const vietnameseTranslationEl = document.getElementById('vietnamese-translation');
     const translationScoreEl = document.getElementById('translation-score');
     const skipBtn = document.getElementById('skip-btn');
     const prevBtn = document.getElementById('prev-btn');
@@ -31,6 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const COMPLETION_THRESHOLD = 0.9; // 90%
     let isPronunciationCorrect = false;
     let isTranslationCorrect = false;
+    let translationMode = 'type'; // 'type' or 'record'
+    let isRecordingTranslation = false;
 
     // --- AI Integration ---
     const synth = window.speechSynthesis;
@@ -48,9 +59,33 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch('data.json');
             allData = await response.json();
+            // enable level buttons and summary button after data loaded
+            enableSelectionButtons();
         } catch (error) {
             alert("Lỗi tải dữ liệu. Hãy chắc chắn file data.json tồn tại và đúng cấu trúc.");
         }
+    }
+
+    function enableSelectionButtons() {
+        levelButtons.forEach(b => b.removeAttribute('disabled'));
+        const summary = document.getElementById('summary-mode-btn');
+        if (summary) summary.removeAttribute('disabled');
+    }
+
+    function disableSelectionButtons() {
+        levelButtons.forEach(b => b.setAttribute('disabled', 'true'));
+        const summary = document.getElementById('summary-mode-btn');
+        if (summary) summary.setAttribute('disabled', 'true');
+    }
+
+    // Fisher-Yates shuffle
+    function shuffleArray(arr) {
+        const a = arr.slice();
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
     }
 
     function startLevel(level) {
@@ -59,14 +94,37 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(`Không có dữ liệu cho Level ${level}!`);
             return;
         }
-        
-        currentSentences = allData[levelKey];
+        // Shuffle sentences for this level so order is random each time
+        currentSentences = shuffleArray(allData[levelKey]);
         currentSentenceIndex = 0;
         
         levelSelectionScreen.classList.add('hidden');
         practiceScreen.classList.remove('hidden');
         practiceHeader.textContent = `Level ${level}`;
         
+        displaySentence();
+    }
+
+    // --- Summary mode: combine all sentences and shuffle (intended for all 125 sentences)
+    function startSummaryMode() {
+        // Combine all level arrays into one
+        const combined = [];
+        Object.keys(allData).forEach(k => {
+            if (Array.isArray(allData[k])) combined.push(...allData[k]);
+        });
+        if (combined.length === 0) {
+            alert('Chưa có dữ liệu để tổng kết. Vui lòng tải dữ liệu trước.');
+            return;
+        }
+
+        currentSentences = shuffleArray(combined);
+        currentSentenceIndex = 0;
+
+        levelSelectionScreen.classList.add('hidden');
+        practiceScreen.classList.remove('hidden');
+    // Show fixed summary count (125) per user's request
+    practiceHeader.textContent = `Tổng kết: 125 câu`;
+
         displaySentence();
     }
 
@@ -83,24 +141,51 @@ document.addEventListener('DOMContentLoaded', () => {
         playAudio(true);
     }
     
+    function setTranslationMode(mode) {
+        translationMode = mode;
+        if (mode === 'type') {
+            translationTypeSection.style.display = '';
+            translationRecordSection.style.display = 'none';
+            translationModeTypeBtn.classList.add('active');
+            translationModeRecordBtn.classList.remove('active');
+        } else {
+            translationTypeSection.style.display = 'none';
+            translationRecordSection.style.display = '';
+            translationModeTypeBtn.classList.remove('active');
+            translationModeRecordBtn.classList.add('active');
+        }
+        // Clear translation result
+        translationRecordResultEl.textContent = '';
+        translationInputEl.value = '';
+    }
+
     function resetForNewSentence() {
         answerSectionEl.classList.add('hidden');
         aiExplanationEl.classList.add('hidden');
         aiExplanationEl.textContent = '';
         correctTranslationEl.parentElement.parentElement.classList.add('hidden');
+        if (vietnameseTranslationEl) vietnameseTranslationEl.textContent = '';
         isPronunciationCorrect = false;
         isTranslationCorrect = false;
         recognitionResultEl.textContent = '';
         pronunciationScoreEl.textContent = '';
         translationInputEl.value = '';
         translationScoreEl.textContent = '';
-        nextBtn.disabled = true;
-        skipBtn.disabled = false;
+    nextBtn.disabled = true;
+    skipBtn.disabled = false;
+    setTranslationMode('type');
     }
 
     function showAnswers() {
         answerSectionEl.classList.remove('hidden');
         correctTranslationEl.parentElement.parentElement.classList.remove('hidden');
+        // populate the Vietnamese translation under the sentence (if available)
+        try {
+            const cur = currentSentences[currentSentenceIndex];
+            if (vietnameseTranslationEl && cur && cur.translation) {
+                vietnameseTranslationEl.textContent = cur.translation;
+            }
+        } catch (e) { /* ignore */ }
         nextBtn.disabled = false;
         skipBtn.disabled = true;
     }
@@ -119,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
         aiExplanationEl.classList.remove('hidden');
         
         // TODO: Thay thế URL này bằng endpoint backend của bạn
-        const YOUR_BACKEND_API_URL = 'https://your-backend-service.com/analyze-grammar';
+        const YOUR_BACKEND_API_URL = 'http://127.0.0.1:5000/analyze-grammar';
         
         try {
              await new Promise(resolve => setTimeout(resolve, 1500));
@@ -138,6 +223,10 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => startLevel(button.dataset.level));
     });
 
+    // Summary mode button
+    const summaryModeBtn = document.getElementById('summary-mode-btn');
+    if (summaryModeBtn) summaryModeBtn.addEventListener('click', startSummaryMode);
+
     backToLevelsBtn.addEventListener('click', () => {
         practiceScreen.classList.add('hidden');
         levelSelectionScreen.classList.remove('hidden');
@@ -148,18 +237,97 @@ document.addEventListener('DOMContentLoaded', () => {
     skipBtn.addEventListener('click', showAnswers);
 
     checkTranslationBtn.addEventListener('click', () => {
-        const userTranslation = translationInputEl.value;
-        const correctTrans = currentSentences[currentSentenceIndex].translation;
-        const score = calculateSimilarity(userTranslation.toLowerCase(), correctTrans.toLowerCase());
-        
-        translationScoreEl.textContent = `Điểm: ${(score * 100).toFixed(0)}%`;
-        translationScoreEl.style.color = score >= COMPLETION_THRESHOLD ? 'green' : (score > 0.6 ? 'orange' : 'red');
+        try {
+            // Ensure we have a sentence loaded
+            const current = currentSentences[currentSentenceIndex];
+            if (!current) {
+                translationScoreEl.textContent = 'Hãy chọn một level và câu trước khi kiểm tra.';
+                translationScoreEl.style.color = 'red';
+                return;
+            }
 
-        if (score >= COMPLETION_THRESHOLD) {
-            isTranslationCorrect = true;
-            checkCompletion();
-        } else { isTranslationCorrect = false; }
+            let userTranslation = '';
+            if (translationMode === 'type') {
+                userTranslation = (translationInputEl.value || '').trim();
+            } else {
+                userTranslation = (translationRecordResultEl.textContent || '').trim();
+            }
+            if (!userTranslation) {
+                translationScoreEl.textContent = translationMode === 'type' ? 'Vui lòng nhập bản dịch của bạn.' : 'Vui lòng ghi âm bản dịch của bạn.';
+                translationScoreEl.style.color = 'red';
+                return;
+            }
+
+            const correctTrans = current.translation || '';
+            const score = calculateSimilarity(userTranslation.toLowerCase(), correctTrans.toLowerCase());
+
+            translationScoreEl.textContent = `Điểm: ${(score * 100).toFixed(0)}%`;
+            translationScoreEl.style.color = score >= COMPLETION_THRESHOLD ? 'green' : (score > 0.6 ? 'orange' : 'red');
+
+            // Reveal the correct translation area so the user can compare
+            try {
+                // correctTranslationEl is inside a <p>, which is inside the .translation-result div
+                if (correctTranslationEl && correctTranslationEl.parentElement && correctTranslationEl.parentElement.parentElement) {
+                    correctTranslationEl.parentElement.parentElement.classList.remove('hidden');
+                }
+            } catch (e) { /* ignore DOM errors */ }
+
+            correctTranslationEl.textContent = correctTrans;
+
+            if (score >= COMPLETION_THRESHOLD) {
+                isTranslationCorrect = true;
+                checkCompletion();
+            } else {
+                isTranslationCorrect = false;
+            }
+        } catch (err) {
+            console.error('Error during translation check:', err);
+            translationScoreEl.textContent = 'Đã có lỗi khi kiểm tra. Vui lòng thử lại.';
+            translationScoreEl.style.color = 'red';
+        }
     });
+
+    // --- Translation mode toggle logic ---
+    if (translationModeRecordBtn && translationModeTypeBtn) {
+        translationModeRecordBtn.addEventListener('click', () => setTranslationMode('record'));
+        translationModeTypeBtn.addEventListener('click', () => setTranslationMode('type'));
+    }
+
+    // --- Translation speech recognition logic ---
+    if (recordTranslationBtn && SpeechRecognition) {
+        let translationRecognition = new SpeechRecognition();
+        translationRecognition.continuous = false;
+        translationRecognition.lang = 'vi-VN';
+        translationRecognition.interimResults = false;
+
+        recordTranslationBtn.addEventListener('click', () => {
+            if (isRecordingTranslation) {
+                try { translationRecognition.stop(); } catch (e) {}
+                return;
+            }
+            translationRecordResultEl.textContent = '';
+            isRecordingTranslation = true;
+            recordTranslationBtn.classList.add('recording');
+            recordTranslationBtn.innerHTML = '<i class="fas fa-stop"></i> Dừng ghi âm';
+            translationRecognition.start();
+        });
+
+        translationRecognition.onresult = (event) => {
+            const spokenText = event.results[0][0].transcript;
+            translationRecordResultEl.textContent = spokenText;
+        };
+        translationRecognition.onend = () => {
+            isRecordingTranslation = false;
+            recordTranslationBtn.classList.remove('recording');
+            recordTranslationBtn.innerHTML = '<i class="fas fa-microphone"></i> Ghi âm dịch';
+        };
+        translationRecognition.onerror = (event) => {
+            translationRecordResultEl.textContent = 'Lỗi nhận dạng: ' + event.error;
+            isRecordingTranslation = false;
+            recordTranslationBtn.classList.remove('recording');
+            recordTranslationBtn.innerHTML = '<i class="fas fa-microphone"></i> Ghi âm dịch';
+        };
+    }
     
     recordBtn.addEventListener('click', () => { if(recognition) recognition.start(); });
 
@@ -255,5 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Initialization ---
+    // disable selection until data is loaded
+    disableSelectionButtons();
     loadData();
 });
